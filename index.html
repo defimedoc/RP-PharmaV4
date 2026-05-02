@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO ── -->
+  <title>Romain Poulin — Directeur Opérationnel · Pharmacien</title>
+  <meta name="description" content="Romain Poulin, Docteur en Pharmacie et Directeur Opérationnel chez Défimédoc. Expertise en direction opérationnelle, e-learning santé, formation continue officinale et management d'équipe." />
+  <meta name="keywords" content="Romain Poulin, directeur opérationnel pharmacie, Défimédoc, pharmacien manager, formation continue officinale, e-learning santé, direction opérationnelle santé, pharmacien titulaire, CPTS, interprofessionnalité" />
+  <meta name="author" content="Romain Poulin" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://romainpoulin.fr/" />
+
+  <!-- ── OPEN GRAPH ── -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Romain Poulin — Directeur Opérationnel · Pharmacien" />
+  <meta property="og:description" content="Docteur en Pharmacie, Directeur Opérationnel chez Défimédoc. Formation continue officinale, management, e-learning santé." />
+  <meta property="og:url" content="https://romainpoulin.fr/" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="profile:first_name" content="Romain" />
+  <meta property="profile:last_name" content="Poulin" />
+
+  <!-- ── SCHEMA.ORG PERSON ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Romain Poulin",
+    "jobTitle": "Directeur Opérationnel",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Défimédoc",
+      "url": "https://www.defimedoc.fr"
+    },
+    "description": "Docteur en Pharmacie, Directeur Opérationnel chez Défimédoc, plateforme de formation continue officinale.",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "UFR Pharmacie, Université de Reims"
+    },
+    "knowsAbout": ["Pharmacie officinale", "Formation continue", "E-learning santé", "Direction opérationnelle", "Salesforce", "Interprofessionnalité"],
+    "email": "mailto:romain.poulin@defimedoc.fr",
+    "url": "https://romainpoulin.fr"
+  }
+  </script>
+
+  <!-- ── FONTS ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ══ TOKENS ══ */
+    :root {
+      --bg:          #f7f6f3;
+      --surface:     #ffffff;
+      --surface2:    #f0eeea;
+      --border:      #e2e0db;
+      --text:        #1a1a1a;
+      --text-muted:  #6b6860;
+      --accent:      #2c5f8a;
+      --accent-soft: #e8f0f7;
+      --accent-mid:  #c2d8eb;
+      --nav-bg:      rgba(247,246,243,0.94);
+      --toggle-bg:   #c8c6c0;
+      --shadow-sm:   0 1px 3px rgba(0,0,0,0.07);
+      --shadow-md:   0 4px 16px rgba(0,0,0,0.08);
+      --radius:      8px;
+      --tr:          0.2s ease;
+      --max-w:       860px;
+    }
+    [data-theme="dark"] {
+      --bg:          #111111;
+      --surface:     #1c1c1c;
+      --surface2:    #242424;
+      --border:      #2d2d2d;
+      --text:        #e6e4df;
+      --text-muted:  #888680;
+      --accent:      #6aacd6;
+      --accent-soft: #182633;
+      --accent-mid:  #2a4a62;
+      --nav-bg:      rgba(17,17,17,0.94);
+      --toggle-bg:   #3a3a3a;
+      --shadow-sm:   0 1px 3px rgba(0,0,0,0.35);
+      --shadow-md:   0 4px 16px rgba(0,0,0,0.45);
+    }
+
+    /* ══ RESET ══ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Lato', Verdana, Geneva, Tahoma, sans-serif;
+      font-weight: 400;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+      transition: background var(--tr), color var(--tr);
+      min-height: 100vh;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ══ NAV ══ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: background var(--tr), border-color var(--tr);
+    }
+    .nav-inner {
+      max-width: var(--max-w); margin: 0 auto;
+      padding: 0 1.5rem; height: 56px;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .nav-logo {
+      font-weight: 700; font-size: 0.88rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--text); text-decoration: none; flex-shrink: 0;
+    }
+    .nav-links { display: flex; align-items: center; list-style: none; }
+    .nav-links a {
+      display: inline-block; padding: 0.3rem 0.8rem;
+      font-size: 0.85rem; font-weight: 400; color: var(--text-muted);
+      text-decoration: none; border-radius: 5px;
+      transition: color var(--tr), background var(--tr);
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); background: var(--accent-soft); }
+
+    /* Theme toggle */
+    .theme-toggle {
+      display: flex; align-items: center; gap: 0.4rem;
+      cursor: pointer; flex-shrink: 0;
+    }
+    .toggle-track {
+      width: 36px; height: 20px; background: var(--toggle-bg);
+      border-radius: 20px; position: relative; transition: background var(--tr);
+    }
+    .toggle-knob {
+      position: absolute; top: 3px; left: 3px; width: 14px; height: 14px;
+      background: #fff; border-radius: 50%;
+      transition: transform var(--tr); box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    }
+    [data-theme="dark"] .toggle-knob { transform: translateX(16px); }
+    [data-theme="dark"] .toggle-track { background: var(--accent-mid); }
+    .toggle-icon { font-size: 0.8rem; user-select: none; }
+
+    /* Burger */
+    .burger {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: 0.3rem; color: var(--text); flex-direction: column; gap: 5px;
+    }
+    .burger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: transform var(--tr), opacity var(--tr);
+    }
+
+    /* Drawer */
+    .nav-drawer {
+      display: none; position: fixed; inset: 56px 0 0 0;
+      background: var(--bg); z-index: 190;
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.5rem; animation: fadeIn 0.2s ease;
+    }
+    .nav-drawer.open { display: flex; }
+    .nav-drawer a {
+      font-size: 1.3rem; font-weight: 700; color: var(--text);
+      text-decoration: none; padding: 0.6rem 2rem; border-radius: var(--radius);
+      transition: color var(--tr), background var(--tr); width: 200px; text-align: center;
+    }
+    .nav-drawer a:hover, .nav-drawer a.active { color: var(--accent); background: var(--accent-soft); }
+    .drawer-toggle { margin-top: 2rem; }
+
+    /* ══ MAIN & SECTIONS ══ */
+    main { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
+    section {
+      display: none; padding: 90px 0 80px; min-height: 100vh;
+      animation: fadeIn 0.28s ease;
+    }
+    section.active { display: block; }
+    #home { min-height: 100vh; }
+    #home.active {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ══ HOME ══ */
+    .avatar-wrap {
+      width: 120px; height: 120px; border-radius: 50%; overflow: hidden;
+      margin-bottom: 1.5rem; border: 3px solid var(--border);
+      box-shadow: var(--shadow-md); background: var(--surface);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .avatar-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .avatar-placeholder { font-size: 3rem; opacity: 0.3; }
+    .home-name {
+      font-size: clamp(2rem, 6vw, 2.8rem); font-weight: 900;
+      letter-spacing: -0.02em; margin-bottom: 0.25rem; color: var(--text);
+    }
+    .home-title {
+      font-size: 0.8rem; font-weight: 400; color: var(--text-muted);
+      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem;
+    }
+    .home-subtitle { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 2rem; }
+    .home-subtitle a { color: var(--accent); font-weight: 700; border-bottom: 1px solid transparent; transition: border-color var(--tr); }
+    .home-subtitle a:hover { border-color: var(--accent); text-decoration: none; }
+    .home-socials { display: flex; gap: 0.8rem; justify-content: center; }
+    .social-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 1px solid var(--border); color: var(--text-muted);
+      text-decoration: none; transition: all var(--tr); background: var(--surface);
+    }
+    .social-btn:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); text-decoration: none; }
+
+    /* ══ SECTION HEADER ══ */
+    .section-title { font-size: 1.7rem; font-weight: 900; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
+    .section-divider { height: 1px; background: var(--border); margin-bottom: 2rem; }
+
+    /* ══ À PROPOS ══ */
+    .about-text p { margin-bottom: 1.1rem; font-size: 0.97rem; line-height: 1.85; text-align: justify; hyphens: auto; }
+    .about-text p:last-child { margin-bottom: 0; }
+
+    /* ══ CV TABS ══ */
+    .cv-tabs {
+      display: flex; border-bottom: 2px solid var(--border);
+      margin-bottom: 2.2rem; overflow-x: auto; scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .cv-tabs::-webkit-scrollbar { display: none; }
+    .cv-tab {
+      background: none; border: none; border-bottom: 2px solid transparent;
+      margin-bottom: -2px; cursor: pointer;
+      font-family: 'Lato', Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 0.88rem; font-weight: 400; color: var(--text-muted);
+      padding: 0.65rem 1.3rem; transition: color var(--tr), border-color var(--tr); white-space: nowrap;
+    }
+    .cv-tab:hover { color: var(--accent); }
+    .cv-tab.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 700; }
+    .cv-panel { display: none; animation: fadeIn 0.22s ease; }
+    .cv-panel.active { display: block; }
+
+    /* ══ TIMELINE ══ */
+    .timeline { position: relative; padding-left: 1.8rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 5px; top: 8px; bottom: 8px;
+      width: 1px; background: var(--border);
+    }
+    .tl-item { position: relative; margin-bottom: 2.2rem; padding-left: 1.2rem; }
+    .tl-item:last-child { margin-bottom: 0; }
+    .tl-dot {
+      position: absolute; left: -1.8rem; top: 7px;
+      width: 11px; height: 11px; border-radius: 50%;
+      background: var(--border); border: 2px solid var(--bg);
+      box-shadow: 0 0 0 1px var(--border); transition: background var(--tr);
+    }
+    .tl-dot.current { background: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+    .tl-date {
+      display: block; font-size: 0.74rem; font-weight: 700; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.15rem;
+    }
+    .tl-title {
+      font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.1rem;
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;
+    }
+    .tl-badge {
+      font-size: 0.7rem; font-weight: 400;
+      background: var(--accent-soft); color: var(--accent);
+      border: 1px solid var(--accent-mid); border-radius: 20px; padding: 0.1rem 0.55rem;
+    }
+    .tl-org { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.15rem; }
+    .tl-org a { color: var(--text-muted); border-bottom: 1px solid var(--border); }
+    .tl-org a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .tl-desc { font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; margin-top: 0.25rem; }
+    .tl-sub {
+      margin-top: 0.6rem; padding: 0.6rem 0.9rem;
+      background: var(--surface2); border-left: 2px solid var(--accent-mid);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 0.84rem; color: var(--text-muted); line-height: 1.6;
+    }
+
+    /* ══ ENGAGEMENT ══ */
+    .engagement-title {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.09em; color: var(--text-muted);
+      margin: 2.8rem 0 1rem; padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .engagement-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .eng-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.1rem 1.2rem;
+      box-shadow: var(--shadow-sm); transition: background var(--tr), border-color var(--tr);
+    }
+    .eng-date {
+      font-size: 0.72rem; font-weight: 700; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.2rem;
+    }
+    .eng-role { font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 0.15rem; }
+    .eng-org { font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; }
+    .eng-org a { color: var(--text-muted); border-bottom: 1px solid var(--border); }
+    .eng-org a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+
+    /* ══ FORMATIONS & COMPÉTENCES ══ */
+    .form-skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .form-block-title, .skills-block-title {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.09em; color: var(--text-muted);
+      margin-bottom: 1.2rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    }
+
+    /* Pills */
+    .pills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
+    .pill {
+      display: inline-block; padding: 0.2rem 0.65rem; border-radius: 20px;
+      font-size: 0.78rem; background: var(--accent-soft); color: var(--accent);
+      border: 1px solid var(--accent-mid);
+    }
+
+    /* Compétences */
+    .skills-level { margin-bottom: 1.4rem; }
+    .skills-level-label {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--text-muted); margin-bottom: 0.5rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .skills-level-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .skill-item {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.45rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem;
+    }
+    .skill-item:last-child { border-bottom: none; }
+    .skill-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+    .skill-dot.muted { background: var(--border); }
+    .skill-name { color: var(--text); }
+    .skill-note { color: var(--text-muted); font-size: 0.78rem; margin-left: auto; }
+
+    /* Agréments */
+    .agrements-block { margin-top: 1.8rem; padding-top: 1.2rem; border-top: 1px solid var(--border); }
+    .agrements-label {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.09em; color: var(--text-muted); margin-bottom: 0.6rem;
+    }
+
+    /* ══ FOOTER ══ */
+    footer {
+      text-align: center; padding: 2rem 1.5rem; font-size: 0.78rem;
+      color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 4rem;
+    }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      section { padding: 80px 0 60px; }
+      .engagement-grid { grid-template-columns: 1fr; }
+      .form-skills-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .timeline { padding-left: 1.4rem; }
+      .tl-dot { left: -1.4rem; }
+      .home-name { font-size: 2rem; }
+    }
+    @media (max-width: 400px) {
+      main { padding: 0 1rem; }
+      .nav-inner { padding: 0 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav role="navigation" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#" onclick="show('home'); closeDrawer(); return false;">Romain Poulin</a>
+      <ul class="nav-links" id="nav-desktop">
+        <li><a href="#" onclick="show('about'); return false;" id="nav-about">À propos</a></li>
+        <li><a href="#" onclick="show('cv'); return false;" id="nav-cv">CV</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:0.6rem;">
+        <div class="theme-toggle" onclick="toggleTheme()" role="button" aria-label="Basculer le thème">
+          <span class="toggle-icon">☀️</span>
+          <div class="toggle-track"><div class="toggle-knob"></div></div>
+          <span class="toggle-icon">🌙</span>
+        </div>
+        <button class="burger" onclick="toggleDrawer()" aria-label="Menu" aria-expanded="false" id="burger-btn">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- DRAWER MOBILE -->
+  <div class="nav-drawer" id="nav-drawer" role="dialog" aria-label="Menu mobile">
+    <a href="#" onclick="show('home');  closeDrawer(); return false;" id="dr-home">Accueil</a>
+    <a href="#" onclick="show('about'); closeDrawer(); return false;" id="dr-about">À propos</a>
+    <a href="#" onclick="show('cv');    closeDrawer(); return false;" id="dr-cv">CV</a>
+    <div class="drawer-toggle">
+      <div class="theme-toggle" onclick="toggleTheme()" role="button" aria-label="Basculer le thème">
+        <span class="toggle-icon">☀️</span>
+        <div class="toggle-track"><div class="toggle-knob"></div></div>
+        <span class="toggle-icon">🌙</span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- HOME -->
+    <section id="home" class="active" aria-label="Présentation">
+      <div class="avatar-wrap">
+        <!-- Remplacer par : <img src="photo.jpg" alt="Romain Poulin"> -->
+        <span class="avatar-placeholder">👤</span>
+      </div>
+      <h1 class="home-name">Romain Poulin</h1>
+      <p class="home-title">Docteur en Pharmacie</p>
+      <p class="home-subtitle">Directeur Opérationnel · <a href="https://www.defimedoc.fr" target="_blank" rel="noopener">Défimédoc</a></p>
+      <div class="home-socials">
+        <a class="social-btn" href="mailto:romain.poulin@defimedoc.fr" title="Email" aria-label="Envoyer un email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+        <a class="social-btn" href="https://linkedin.com" target="_blank" rel="noopener" title="LinkedIn" aria-label="Profil LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section id="about" aria-label="À propos">
+      <h2 class="section-title">À propos</h2>
+      <div class="section-divider"></div>
+      <div class="about-text">
+        <p>Docteur en pharmacie diplômé en 2012, j'ai exercé huit années en tant que pharmacien titulaire à Doulaincourt (Haute-Marne), avant de transmettre mon officine en 2022 pour m'engager dans de nouveaux projets.</p>
+        <p>Depuis 2023, je consacre l'intégralité de mon activité professionnelle à <a href="https://www.defimedoc.fr" target="_blank" rel="noopener">Défimédoc</a>, plateforme e-learning dédiée à la formation continue des équipes officinales. D'abord Directeur du développement, j'occupe depuis février 2025 le poste de <strong>Directeur Opérationnel</strong> : je supervise l'ensemble des opérations — contenus pédagogiques, développement commercial, technique et administratif — et je contribue activement à la croissance de la plateforme.</p>
+        <p>Parallèlement à mes responsabilités chez Défimédoc, j'ai enrichi ma pratique par un Diplôme Universitaire en pharmacovigilance (Université de Limoges, 2023) et je poursuis un enseignement vacataire à l'UFR de Pharmacie.</p>
+        <p>Mon parcours antérieur m'a également conduit à m'investir dans l'interprofessionnalité : fondateur et président de la CPTS Centre Haute-Marne (2019–2022) et de l'ESP de Doulaincourt, j'y ai développé des compétences solides en gestion de projet, animation de réseaux et leadership pluridisciplinaire.</p>
+      </div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv" aria-label="Curriculum vitæ">
+      <h2 class="section-title">Curriculum vitæ</h2>
+      <div class="section-divider"></div>
+
+      <div class="cv-tabs" role="tablist">
+        <button class="cv-tab active" onclick="switchTab('parcours')"  role="tab" aria-selected="true">Parcours</button>
+        <button class="cv-tab"        onclick="switchTab('formation')" role="tab" aria-selected="false">Formations &amp; Compétences</button>
+      </div>
+
+      <!-- PARCOURS -->
+      <div class="cv-panel active" id="tab-parcours" role="tabpanel">
+        <div class="timeline">
+
+          <div class="tl-item">
+            <div class="tl-dot current"></div>
+            <span class="tl-date">Fév. 2025 — présent</span>
+            <h3 class="tl-title">Directeur Opérationnel</h3>
+            <p class="tl-org"><a href="https://www.defimedoc.fr" target="_blank" rel="noopener">Défimédoc</a> · plateforme e-learning officinale</p>
+            <p class="tl-desc">Supervision de l'ensemble des opérations : contenus pédagogiques, développement commercial, technique et administratif.</p>
+            <div class="tl-sub"><strong>Directeur du développement</strong> · Jan. 2023 – Jan. 2025</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <span class="tl-date">2014 — 2022</span>
+            <h3 class="tl-title">Pharmacien Titulaire</h3>
+            <p class="tl-org">Pharmacie Poulin — Doulaincourt (52)</p>
+            <p class="tl-desc">Gestion complète d'une officine, incluant un transfert et modernisation des locaux en 2015. Huit années d'exercice libéral.</p>
+            <div class="tl-sub">Pharmacien remplaçant · 2022–2024 — Vincelles, Joigny, Marly-la-Ville, Provins, Bugeat, Plogoff, Reims, Parigny-lès-Reims</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <span class="tl-date">2016 — présent</span>
+            <h3 class="tl-title">Enseignant Vacataire</h3>
+            <p class="tl-org">UFR Pharmacie · IFSI Chaumont (2020–2022)</p>
+          </div>
+
+        </div>
+
+        <p class="engagement-title">Engagement associatif</p>
+        <div class="engagement-grid">
+          <div class="eng-card">
+            <span class="eng-date">2019 — 2022</span>
+            <p class="eng-role">Président &amp; Fondateur</p>
+            <p class="eng-org"><a href="https://cptsducentrehautemarne.fr/" target="_blank" rel="noopener">CPTS Centre Haute-Marne</a></p>
+          </div>
+          <div class="eng-card">
+            <span class="eng-date">2019 — 2022</span>
+            <p class="eng-role">Président &amp; Fondateur</p>
+            <p class="eng-org">ESP Doulaincourt</p>
+          </div>
+          <div class="eng-card">
+            <span class="eng-date">2016 — 2022</span>
+            <p class="eng-role">Président</p>
+            <p class="eng-org"><a href="https://www.fspf.fr/syndicats-regionaux-departementaux/syndicat-des-pharmaciens-de-la-haute-marne/" target="_blank" rel="noopener">Syndicat des Pharmaciens de la Haute-Marne</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMATIONS & COMPÉTENCES -->
+      <div class="cv-panel" id="tab-formation" role="tabpanel">
+        <div class="form-skills-grid">
+
+          <div>
+            <p class="form-block-title">Diplômes &amp; formations</p>
+            <div class="timeline">
+
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <span class="tl-date">2024</span>
+                <h4 class="tl-title">Prescription Vaccinale <span class="tl-badge">10,5h</span></h4>
+                <p class="tl-org">En ligne</p>
+              </div>
+
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <span class="tl-date">2024</span>
+                <h4 class="tl-title">Recherche bibliographique internationale <span class="tl-badge">7h</span></h4>
+                <p class="tl-org">En ligne</p>
+              </div>
+
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <span class="tl-date">2022 — 2023</span>
+                <h4 class="tl-title">DU e-PICIM</h4>
+                <p class="tl-org">Université de Limoges</p>
+                <p class="tl-desc">Pharmacovigilance, Interactions, Contre-Indications Médicamenteuses</p>
+              </div>
+
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <span class="tl-date">2021</span>
+                <h4 class="tl-title">Éducation Thérapeutique du Patient <span class="tl-badge">40h</span></h4>
+                <p class="tl-org">Chaumont</p>
+              </div>
+
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <span class="tl-date">2005 — 2012</span>
+                <h4 class="tl-title">Doctorat en Pharmacie</h4>
+                <p class="tl-org">UFR Pharmacie — Reims</p>
+              </div>
+
+            </div>
+            <div class="agrements-block">
+              <p class="agrements-label">Agréments</p>
+              <div class="pills">
+                <span class="pill">Prélèvement TROD Angine</span>
+                <span class="pill">Prélèvement Nasopharyngé (COVID)</span>
+                <span class="pill">Vaccination (Prescription &amp; Injection)</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p class="skills-block-title">Compétences</p>
+
+            <div class="skills-level">
+              <p class="skills-level-label">Maîtrisé</p>
+              <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">HTML5 / CSS3</span></div>
+              <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Salesforce</span></div>
+              <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Photoshop</span></div>
+              <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Pack Office</span></div>
+              <div class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">IA générative</span>
+                <span class="skill-note">ChatGPT · Claude · Copilot</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">RGPD</span>
+                <span class="skill-note">MOOC CNIL</span>
+              </div>
+            </div>
+
+            <div class="skills-level">
+              <p class="skills-level-label">Notions</p>
+              <div class="skill-item"><span class="skill-dot muted"></span><span class="skill-name">Python</span></div>
+              <div class="skill-item"><span class="skill-dot muted"></span><span class="skill-name">Java</span></div>
+              <div class="skill-item"><span class="skill-dot muted"></span><span class="skill-name">MySQL</span></div>
+              <div class="skill-item"><span class="skill-dot muted"></span><span class="skill-name">PHP</span></div>
+            </div>
+
+            <div class="skills-level">
+              <p class="skills-level-label">Langues</p>
+              <div class="skill-item">
+                <span class="skill-dot"></span>
+                <span class="skill-name">Anglais</span>
+                <span class="skill-note">B2 — lecture scientifique</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    © 2023 – 2025 Romain Poulin · Docteur en Pharmacie · Directeur Opérationnel Défimédoc
+  </footer>
+
+  <script>
+    const SECTIONS = ['home','about','cv'];
+    const NAV_IDS  = { about: 'nav-about', cv: 'nav-cv' };
+
+    function show(id) {
+      SECTIONS.forEach(s => document.getElementById(s)?.classList.toggle('active', s === id));
+      Object.entries(NAV_IDS).forEach(([sec, nid]) => document.getElementById(nid)?.classList.toggle('active', sec === id));
+      ['home','about','cv'].forEach(s => document.getElementById('dr-' + s)?.classList.toggle('active', s === id));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    const TAB_IDS = ['parcours','formation'];
+    function switchTab(id) {
+      document.querySelectorAll('.cv-tab').forEach((btn, i) => {
+        const on = TAB_IDS[i] === id;
+        btn.classList.toggle('active', on);
+        btn.setAttribute('aria-selected', on);
+      });
+      document.querySelectorAll('.cv-panel').forEach(p => p.classList.toggle('active', p.id === 'tab-' + id));
+    }
+
+    function toggleTheme() {
+      const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('rp-theme', next); } catch(e) {}
+    }
+
+    (function() {
+      try { const s = localStorage.getItem('rp-theme'); if (s) document.documentElement.setAttribute('data-theme', s); } catch(e) {}
+    })();
+
+    let drawerOpen = false;
+    function toggleDrawer() {
+      drawerOpen = !drawerOpen;
+      document.getElementById('nav-drawer').classList.toggle('open', drawerOpen);
+      document.getElementById('burger-btn').setAttribute('aria-expanded', drawerOpen);
+    }
+    function closeDrawer() {
+      drawerOpen = false;
+      document.getElementById('nav-drawer').classList.remove('open');
+      document.getElementById('burger-btn').setAttribute('aria-expanded', false);
+    }
+    window.addEventListener('resize', () => { if (window.innerWidth > 680) closeDrawer(); });
+  </script>
+
+</body>
+</html>
